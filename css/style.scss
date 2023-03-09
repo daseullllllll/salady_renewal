@@ -1,0 +1,901 @@
+@font-face {
+	font-family: 'MapoPeacefull';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$mobile: 'screen and (max-width:640px)';
+
+// @media #{$mobile}{
+// }
+
+#wrap {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	font-family: 'MapoPeacefull';
+	// border: 1px solid #000;
+
+	@media #{$mobile} {
+		min-width: 100%;
+		// border: 1px solid #000;
+	}
+
+	> header {
+		width: 100%;
+
+		> .container {
+			position: relative;
+			margin: 0 auto;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #eee;
+
+			> .logo {
+				width: 124px;
+				background-image: url(./../images/logo.jpg);
+				background-repeat: no-repeat;
+				// border: 1px solid #000;
+
+				@media #{$mobile} {
+					width: 10%;
+					margin: 30px auto;
+					background-position: center center;
+					background-size: cover;
+					// border: 1px solid #000;
+				}
+				> a {
+					display: block;
+					height: 112px;
+					text-indent: -9999px;
+
+					@media #{$mobile} {
+						height: 50px;
+					}
+				}
+			} //end of logo
+
+			> .m-gnb {
+				display: none;
+
+				@media #{$mobile} {
+					display: block;
+				}
+				> .btn-gnb {
+					@media #{$mobile} {
+						background: none;
+						border: none;
+						outline: none;
+
+						display: block;
+						position: absolute;
+						right: 10px;
+						top: 15px;
+
+						width: 30px;
+						height: 20px;
+						// border-bottom: 1px solid #000;
+
+						> span {
+							display: block;
+							top: 50%;
+							margin-top: -2px;
+							opacity: 1;
+							transition: all 0.3s;
+						}
+
+						&:before {
+							content: '';
+							display: block;
+							top: 0;
+							transition: all 0.3s;
+						}
+
+						&:after {
+							content: '';
+							display: block;
+							bottom: 0;
+							transition: all 0.3s;
+						}
+
+						> span,
+						&:after,
+						&:before {
+							border-right: 2px;
+							overflow: hidden;
+							position: absolute;
+							left: 0;
+							width: 100%;
+							height: 3px;
+							background: #000;
+						}
+					}
+				}
+				nav {
+					display: none;
+
+					@media #{$mobile} {
+						// display: block;
+						position: fixed;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						background-color: rgba(0, 0, 0, 0.5);
+						z-index: 10000;
+						// border: 1px solid #000;
+					}
+					> .gnb {
+						@media #{$mobile} {
+							display: block;
+							position: fixed;
+							right: 0;
+							width: 70%;
+							height: 100%;
+							background-color: #fff;
+
+							> .btn-gnb {
+								background: none;
+								border: none;
+								outline: none;
+
+								display: block;
+								position: fixed;
+								right: 0;
+								top: 30px;
+								width: 27px;
+								height: 27px;
+								margin: 15px;
+								background-image: url(./../images/slide_close.png);
+							}
+						}
+						> li {
+							@media #{$mobile} {
+								font-weight: 600;
+								font-size: 20px;
+								text-align: center;
+								// border: 1px solid #000;
+
+								&:nth-child(2) {
+									margin-top: 100px;
+								}
+							}
+							> a {
+								@media #{$mobile} {
+									display: block;
+									height: 40px;
+									line-height: 40px;
+									letter-spacing: 3px;
+									background-color: #fff;
+									border-radius: 0;
+								}
+							}
+
+							> .lnb {
+								display: none;
+
+								> li {
+									@media #{$mobile} {
+										background-color: #eee;
+									}
+
+									@media #{$mobile} {
+										border-radius: 0;
+
+										&:last-child {
+											border-radius: 0;
+										}
+									}
+									> a {
+										display: block;
+										height: 30px;
+										line-height: 30px;
+										font-size: 16px;
+
+										&:hover {
+											text-decoration: underline;
+										}
+									}
+								} //end of li
+							} //end of .lnb
+						} //end of li
+
+						> li {
+							> .snb {
+								@media #{$mobile} {
+									position: fixed;
+									right: 0;
+									bottom: 10px;
+									display: flex;
+									// border: 1px solid #000;
+								}
+								> li {
+									@media #{$mobile} {
+										width: 40px;
+										margin-right: 10px;
+
+										&:nth-child(1) {
+											background-image: url(./../images/아이콘/app.png);
+											background-position: center;
+											background-size: cover;
+										}
+										&:nth-child(2) {
+											background-image: url(./../images/아이콘/insta.png);
+											background-position: center;
+											background-size: cover;
+										}
+									}
+
+									> a {
+										@media #{$mobile} {
+											display: block;
+											height: 40px;
+											text-indent: -9999px;
+											// border: 1px solid #000;
+										}
+									}
+								} //end of li
+							} //end of .snb
+						}
+					} //end of .gnb
+				} //end of nav
+			}
+
+			> .snb {
+				position: absolute;
+				right: 0;
+				top: 10px;
+				display: flex;
+				> li {
+					width: 40px;
+					margin-right: 10px;
+
+					&:nth-child(1) {
+						background-image: url(./../images/아이콘/app.png);
+						background-position: center;
+						background-size: cover;
+					}
+					&:nth-child(2) {
+						background-image: url(./../images/아이콘/insta.png);
+						background-position: center;
+						background-size: cover;
+					}
+
+					@media #{$mobile} {
+						display: none;
+					}
+
+					> a {
+						display: block;
+						height: 40px;
+						text-indent: -9999px;
+						// border: 1px solid #000;
+					}
+				} //end of li
+			} //end of .snb
+
+			> nav {
+				position: absolute;
+				right: 150px;
+				top: 60px;
+				z-index: 100;
+
+				@media #{$mobile} {
+					display: none;
+				}
+				> .gnb {
+					display: flex;
+					> li {
+						width: 130px;
+						margin-right: 20px;
+						font-weight: 600;
+						font-size: 20px;
+						text-align: center;
+						> a {
+							display: block;
+							height: 40px;
+							line-height: 40px;
+							letter-spacing: 3px;
+							background-color: #eee;
+							border-radius: 5px;
+						}
+
+						> .lnb {
+							display: none;
+
+							> li {
+								background-color: #fff;
+
+								&:last-child {
+									border-radius: 0 0 10px 10px;
+								}
+								> a {
+									display: block;
+									height: 30px;
+									line-height: 30px;
+									font-size: 16px;
+
+									&:hover {
+										text-decoration: underline;
+									}
+								}
+							} //end of li
+						} //end of .lnb
+					} //end of li
+				} //end of .gnb
+			} //end of nav
+		} //end of .container
+	} //end of header
+
+	> section {
+		#slides {
+			position: relative;
+			width: 1300px;
+			height: 350px;
+			margin: 0 auto;
+			padding-bottom: 200px;
+			// border: 1px solid #000;
+			@media #{$mobile} {
+				width: 100%;
+				height: 500px;
+				padding-bottom: 50px;
+			}
+
+			> .bx-wrapper {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1300px;
+				height: 390px;
+				margin: 0 auto;
+				border: 0;
+				box-shadow: initial;
+
+				@media #{$mobile} {
+					width: 100%;
+					height: 475px;
+				}
+
+				> .bx-viewport {
+					> .slides-container {
+						> li {
+							background-size: 100%;
+							background-repeat: no-repeat;
+							&.ad_1 {
+								background-image: url(./../images/slide/s1.png);
+							}
+							&.ad_2 {
+								background-image: url(./../images/slide/s2.png);
+							}
+							&.ad_3 {
+								background-image: url(./../images/slide/s3.jpg);
+							}
+							&.ad_4 {
+								background-image: url(./../images/slide/s4.png);
+							}
+							&.ad_5 {
+								background-image: url(./../images/slide/s5.png);
+							}
+							&.ad_6 {
+								background-image: url(./../images/slide/s6.png);
+							}
+
+							@media #{$mobile} {
+								width: 100%;
+								height: 500px;
+								&.ad_1 {
+									background-image: url(./../images/slide/mobile1.png);
+								}
+								&.ad_2 {
+									background-image: url(./../images/slide/mobile2.jpg);
+								}
+								&.ad_3 {
+									background-image: url(./../images/slide/mobile3.png);
+								}
+								&.ad_4 {
+									background-image: url(./../images/slide/mobile4.png);
+								}
+								&.ad_5 {
+									background-image: url(./../images/slide/mobile5.png);
+								}
+								&.ad_6 {
+									background-image: url(./../images/slide/mobile6.jpg);
+								}
+							}
+							> a {
+								display: block;
+								height: 400px;
+								text-indent: -9999px;
+							}
+						} //end of li
+					} //end of .slides-container
+				} //end of .bx-viewport
+			} //end of .bx-wrapper
+		} //end of #slides
+
+		> #menu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 1200px;
+			margin: 0 auto;
+			padding-bottom: 100px;
+			// border: 1px solid #000;
+
+			@media #{$mobile} {
+				width: 100%;
+				display: block;
+			}
+
+			> .new {
+				margin-top: 10px;
+				width: 600px;
+				// border: 1px solid #000;
+
+				@media #{$mobile} {
+					width: 100%;
+				}
+				> h3 {
+					font-size: 32px;
+					text-align: center;
+					margin-bottom: 10px;
+				} //end of h3
+
+				> .newmnu {
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					width: 90%;
+					margin: 0 auto;
+					// border: 1px solid #000;
+
+					@media #{$mobile} {
+						padding-bottom: 50px;
+					}
+					> li {
+						width: 250px;
+						height: 250px;
+						margin-bottom: 20px;
+						background-position: center center;
+						background-size: cover;
+						// border: 1px solid #f00;
+
+						&:nth-child(1) {
+							background-image: url(./../images/menu/n-spicybeefbread.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(./../images/menu/n-roastchicken_salady.jpg);
+						}
+						&:nth-child(3) {
+							background-image: url(./../images/menu/n-roastchicken_sand.jpg);
+						}
+
+						@media #{$mobile} {
+							width: 200px;
+							height: 200px;
+						}
+
+						> a {
+							display: block;
+							padding-top: 235px;
+							font-size: 16px;
+							text-align: center;
+							// border: 1px solid #000;
+
+							&:hover {
+								background-color: rgba(195, 195, 195, 0.2);
+								border-radius: 5px;
+							}
+
+							@media #{$mobile} {
+								padding-top: 200px;
+							}
+						} //end of a
+					} //end of li
+				} //end of .newmnu
+			} //end of #new
+
+			> .best {
+				margin-top: 10px;
+				width: 600px;
+				// border: 1px solid #000;
+
+				@media #{$mobile} {
+					width: 100%;
+				}
+				> h3 {
+					font-size: 32px;
+					text-align: center;
+					margin-bottom: 10px;
+				} //end of h3
+
+				> .bestmnu {
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					width: 90%;
+					margin: 0 auto;
+					// border: 1px solid #000;
+					> li {
+						width: 250px;
+						height: 250px;
+						margin-bottom: 20px;
+						background-position: center center;
+						background-size: cover;
+						// border: 1px solid #f00;
+
+						&:nth-child(1) {
+							background-image: url(./../images/menu/b-tandanji.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(./../images/menu/b-chili_bacon_warmball.jpg);
+						}
+						&:nth-child(3) {
+							background-image: url(./../images/menu/b-beep_wrap.png);
+						}
+						&:nth-child(4) {
+							background-image: url(./../images/menu/b-beef.jpg);
+						}
+						&:nth-child(5) {
+							background-image: url(./../images/menu/b-eggbacon.jpg);
+						}
+						&:nth-child(6) {
+							background-image: url(./../images/menu/b-mexican.png);
+						}
+
+						@media #{$mobile} {
+							width: 200px;
+							height: 200px;
+						}
+						> a {
+							display: block;
+							padding-top: 235px;
+							font-size: 16px;
+							text-align: center;
+
+							&:hover {
+								background-color: rgba(195, 195, 195, 0.2);
+								border-radius: 5px;
+							}
+
+							@media #{$mobile} {
+								padding-top: 200px;
+							}
+						}
+					} //end of li
+				} //end of .bestmnu
+			} //end of #bestmnu
+
+			> .began {
+				position: relative;
+				width: 1200px;
+				margin-top: 100px;
+				// border: 1px solid #000;
+
+				@media #{$mobile} {
+					width: 100%;
+					height: 600px;
+				}
+
+				> h3 {
+					display: inline-block;
+					font-size: 32px;
+					margin: 0 0 10px 200px;
+					// border: 1px solid #000;
+
+					@media #{$mobile} {
+						display: block;
+						width: 100%;
+						margin: 0 0 10px;
+						text-align: center;
+					}
+				}
+
+				> .begmnu {
+					display: flex;
+					justify-content: space-between;
+					width: 540px;
+					margin-left: 10px;
+					// border: 1px solid #f00;
+
+					@media #{$mobile} {
+						width: 90%;
+						margin: 0 auto;
+					}
+					> li {
+						width: 250px;
+						height: 250px;
+						margin-left: 30px;
+						background-position: center center;
+						background-size: cover;
+						// border: 1px solid #f00;
+
+						&:nth-child(1) {
+							background-image: url(./../images/menu/vegan_pumpkin.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(./../images/menu/vegan_mushroom.jpg);
+						}
+
+						@media #{$mobile} {
+							width: 200px;
+							height: 200px;
+							margin-left: 0;
+						}
+						> a {
+							display: block;
+							padding-top: 235px;
+							font-size: 16px;
+							text-align: center;
+							// border: 1px solid #000;
+
+							&:hover {
+								background-color: rgba(195, 195, 195, 0.2);
+								border-radius: 5px;
+							}
+						}
+					} //end of li
+				} //end of .begmnu
+
+				> .toping {
+					position: absolute;
+					right: 200px;
+					top: 55px;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					width: 350px;
+					// border: 1px solid #000;
+
+					@media #{$mobile} {
+						width: 90%;
+						right: 20px;
+						top: 330px;
+					}
+					> li {
+						width: 100px;
+						height: 100px;
+						margin-bottom: 40px;
+						// border: 1px solid #000;
+						background-position: center center;
+						background-size: 90%;
+						background-repeat: no-repeat;
+
+						&:nth-child(1) {
+							background-image: url(./../images/concon.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(./../images/pumpkin.jpg);
+						}
+						&:nth-child(3) {
+							background-image: url(./../images/sweatpotato.jpg);
+							background-size: cover;
+						}
+
+						@media #{$mobile} {
+							width: 130px;
+							height: 130px;
+						}
+						> a {
+							display: block;
+							text-align: center;
+							padding-top: 110px;
+
+							&:hover {
+								background-color: rgba(195, 195, 195, 0.2);
+								border-radius: 5px;
+							}
+
+							@media #{$mobile} {
+								padding-top: 130px;
+							}
+						}
+					} //end of li
+					> p {
+						color: #1d6b1b;
+						font-weight: 600;
+						font-size: 17px;
+						padding-bottom: 10px;
+
+						@media #{$mobile} {
+							width: 100%;
+							text-align: center;
+						}
+					}
+
+					> button {
+						width: 100%;
+						height: 50px;
+						color: #fff;
+						line-height: 40px;
+						font-family: 'MapoPeacefull';
+						font-weight: 600;
+						font-size: 22px;
+						letter-spacing: 3px;
+						background-color: #975e35;
+						border-radius: 5px;
+						border: 0;
+						outline: 0;
+
+						&:hover {
+							background-color: #1d6b1b;
+						}
+
+						@media #{$mobile} {
+							width: 90%;
+							margin: 0 auto;
+						}
+						> span {
+							display: inline-block;
+							width: 40px;
+							height: 40px;
+							text-indent: -9999px;
+							background-image: url(./../images/go.png);
+							background-position: center center;
+							background-size: cover;
+							// border: 1px solid #000;
+						} //end of span
+					} //end of button
+				} //end of .toping
+			} //end of #began
+		} //end of #menu
+
+		> #insta {
+			width: 1200px;
+			margin: 0 auto;
+			// border: 1px solid #000;
+
+			@media #{$mobile} {
+				width: 100%;
+			}
+
+			> h3 {
+				font-size: 32px;
+				text-align: center;
+				padding-bottom: 30px;
+			} //end of h3
+
+			> .instapic {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				width: 1100px;
+				margin: 0 auto;
+				// border: 1px solid #000;
+
+				@media #{$mobile} {
+					width: 87%;
+				}
+				> li {
+					width: 200px;
+					height: 200px;
+					margin-bottom: 20px;
+					background-position: center center;
+					background-size: cover;
+					&:nth-child(1) {
+						background-image: url(./../images/insta/1-warmwrapday.jpg);
+					}
+					&:nth-child(2) {
+						background-image: url(./../images/insta/2-soup.jpg);
+					}
+					&:nth-child(3) {
+						background-image: url(./../images/insta/3-liergame.jpg);
+					}
+					&:nth-child(4) {
+						background-image: url(./../images/insta/4-saladyapp.jpg);
+					}
+					&:nth-child(5) {
+						background-image: url(./../images/insta/5-fightingkorea.jpg);
+					}
+					&:nth-child(6) {
+						background-image: url(./../images/insta/6-quiz.jpg);
+					}
+					&:nth-child(7) {
+						background-image: url(./../images/insta/7-vegan.jpg);
+					}
+					&:nth-child(8) {
+						background-image: url(./../images/insta/8-fallseasonmenu.jpg);
+					}
+					&:nth-child(9) {
+						background-image: url(./../images/insta/9-nextmenu.jpg);
+					}
+					&:nth-child(10) {
+						background-image: url(./../images/insta/10-winterseasonmenu.jpg);
+					}
+					> a {
+						display: block;
+						height: 100%;
+						text-indent: -9999px;
+					}
+				} //end of li
+			} //end of .instapic
+		} //end of #insta
+	} //end of section
+
+	> footer {
+		position: relative;
+		height: 100px;
+		margin-top: 50px;
+		background-color: #fff;
+		border-top: 1px solid #eee;
+
+		@media #{$mobile} {
+			padding-bottom: 50px;
+		}
+
+		> p {
+			display: flex;
+			justify-content: space-between;
+			position: absolute;
+			left: 50%;
+			top: 20px;
+			width: 350px;
+			margin-left: -175px;
+			// border: 1px solid #000;
+			> a {
+				display: block;
+				width: 150px;
+				line-height: 30px;
+				text-align: center;
+				border: 3px solid #eee;
+				border-radius: 5px;
+			}
+		} //end of p
+
+		> address {
+			position: absolute;
+			left: 50%;
+			top: 70px;
+			margin-left: -320px;
+			text-align: center;
+			// border: 1px solid #000;
+
+			@media #{$mobile} {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-left: -230px;
+			}
+		} //end of address
+	} //end of footer
+
+	> aside {
+		position: fixed;
+		right: 50px;
+		bottom: 50px;
+		// border: 1px solid #000;
+
+		@media #{$mobile} {
+			display: none;
+		}
+		> ul {
+			> li {
+				width: 241px;
+				margin-bottom: 10px;
+
+				background-position: center center;
+				background-size: 80%;
+				background-repeat: no-repeat;
+				&:nth-child(1) {
+					background-image: url(./../images/icon/icon1.png);
+				}
+
+				&:nth-child(2) {
+					background-image: url(./../images/icon/icon2.png);
+				}
+
+				&:nth-child(3) {
+					background-image: url(./../images/icon/icon3.png);
+				}
+				// border: 1px solid #000;
+				> a {
+					display: block;
+					height: 78px;
+					text-indent: -9999px;
+					// border: 1px solid #000;
+				} //end of a
+			} //end of li
+		}
+	} //end of aside
+} //end of #wrap
